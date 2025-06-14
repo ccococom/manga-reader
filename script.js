@@ -1,28 +1,30 @@
-const pages = [
-  "https://i.imgur.com/0rVeh4U.jpg",
-  "https://i.imgur.com/x6e5J2T.jpg",
-  "https://i.imgur.com/RKbPZLv.jpg"
-];
-
+const images = ["1.jpg", "2.jpg", "3.jpg"];
 let currentPage = 0;
 
-function showPage() {
-  document.getElementById("comic-page").src = pages[currentPage];
-  document.getElementById("page-number").textContent = `หน้า ${currentPage + 1}`;
+const comicPage = document.getElementById("comic-page");
+const pageNumber = document.getElementById("page-number");
+
+// โหลดรูปแรก
+function showPage(index) {
+  comicPage.src = `images/${images[index]}`;
+  pageNumber.textContent = `หน้า ${index + 1}`;
 }
 
-function nextPage() {
-  if (currentPage < pages.length - 1) {
-    currentPage++;
-    showPage();
-  }
-}
-
+// ถอยหลัง
 function prevPage() {
   if (currentPage > 0) {
     currentPage--;
-    showPage();
+    showPage(currentPage);
   }
 }
 
-showPage();
+// ไปหน้าใหม่
+function nextPage() {
+  if (currentPage < images.length - 1) {
+    currentPage++;
+    showPage(currentPage);
+  }
+}
+
+// โหลดหน้าแรกเมื่อเปิดเว็บ
+showPage(currentPage);
