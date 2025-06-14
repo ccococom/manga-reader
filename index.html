@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>เว็บอ่านการ์ตูน</title>
+  <title>อ่านการ์ตูนฟรี</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>ยินดีต้อนรับสู่เว็บอ่านการ์ตูน!</h1>
-  <script src="script.js"></script>
+  <h1>📖 อ่านการ์ตูน: ผจญภัยต่างโลก</h1>
+  <div id="comic-container">
+    <img id="comic-page" src="" alt="หน้าการ์ตูน" width="300">
+  </div>
+  <div class="buttons">
+    <button onclick="prevPage()">ย้อนกลับ</button>
+    <span id="page-number">หน้า 1</span>
+    <button onclick="nextPage()">หน้าถัดไป</button>
+  </div>
 </body>
 </html>
+
